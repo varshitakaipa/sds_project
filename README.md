@@ -4,6 +4,11 @@ First milestone for Varshita K (CS24BT007), Space and Data Science Club.
 Scope: reproducible public-data acquisition, quality checks and exploratory orbital features.
 This is an initial data pipeline, not a validated degradation detector.
 
+## Completed offline Kp analysis
+
+Run `python -m pip install -r requirements.txt`, then `python src/analyze_kp.py` and `python -m unittest discover -s tests -v`.
+See `results/space_weather/findings.md` and `kp_overview.png`. This analyses environmental context only; orbital data remains unavailable.
+
 ## Run on Windows
 ```powershell
 py -m venv .venv

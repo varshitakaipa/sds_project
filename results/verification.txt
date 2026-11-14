@@ -1,10 +1,14 @@
-Python: 3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]
+Python: 3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]
+Executable: C:\Python314\python.exe
 
 test_circular_orbit_and_large_catalog_id (test_features.FeatureTests.test_circular_orbit_and_large_catalog_id) ... ok
 test_invalid_elements (test_features.FeatureTests.test_invalid_elements) ... ok
+test_bad_values_and_lengths (test_kp.KpTests.test_bad_values_and_lengths) ... ok
+test_duplicate_and_off_grid (test_kp.KpTests.test_duplicate_and_off_grid) ... ok
+test_gap_splits_events_and_end_is_exclusive (test_kp.KpTests.test_gap_splits_events_and_end_is_exclusive) ... ok
 
 ----------------------------------------------------------------------
-Ran 2 tests in 0.000s
+Ran 5 tests in 0.001s
 
 OK
 

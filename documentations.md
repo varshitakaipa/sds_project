@@ -1,5 +1,18 @@
 # documentations
 
+## Updated milestone: Kp analysis completed
+
+The user manually acquired data/raw/kp_2026-11-14.json. Run `python src/analyze_kp.py` offline. It validates array lengths, finite Kp values, unique three-hour UTC bins and status codes before sorting and exporting records. There are 352 observations and no missing bins in the observed span: 1 October through 13 November 2026. 248 are definitive and 104 provisional; provisional values can change.
+
+Outputs in results/space_weather include clean CSV, daily coverage/maxima, contiguous threshold intervals, summary, provenance, findings and a plot. Interval ends are exclusive; missing or below-threshold bins split intervals. Boundary events may be truncated. Daily completeness requires eight validated UTC bins. Kp is quasi-logarithmic; daily maxima are reported without interpreting arithmetic means as physical energy.
+
+Kp >= 5 is an exploratory environmental flag informed by NOAA's G1 boundary: https://www.spaceweather.gov/noaa-scales-explanation . Maximum observed Kp is 7.333; 9 bins (27 hours, 2.56%) meet the threshold, forming 7 contiguous intervals. These are algorithmic groups, not independently validated storms. No satellite-health inference is supported by Kp alone.
+
+Provider metadata reports GFZ Potsdam and CC BY 4.0: https://kp.gfz.de/en/data . Retain attribution. Raw data remains local and ignored by Git. results/space_weather/provenance.json records SHA256, size and analysis time; exact manual retrieval time was not recorded and remains null. Earlier download errors are retained as historical evidence of attempts.
+
+All five project tests pass. No orbital observations have been acquired and weather alignment remains pending. This update supersedes initial Kp-pending statements below.
+
+
 ## Project and milestone
 Research question: can public orbital histories reveal signs before operational degradation or failure?
 Milestone 1 implements acquisition and exploratory analysis. All work in this initial submission was done on 14 November 2026; no earlier activity is claimed.

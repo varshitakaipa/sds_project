@@ -1,0 +1,15 @@
+{
+  "source": "GFZ Potsdam",
+  "source_page": "https://kp.gfz.de/en/data",
+  "file": "kp_2026-11-14.json",
+  "sha256": "434c96b83f9d85fd9e133295342d05c701d6e86b640b060930a03bdf993fd907",
+  "bytes": 12173,
+  "retrieval_method": "Manual browser download by user",
+  "retrieval_utc": null,
+  "retrieval_note": "Exact retrieval time not recorded; analysis time is not retrieval time.",
+  "analyzed_utc": "2026-11-14T10:56:44.212730+00:00",
+  "provider_metadata": {
+    "license": "CC BY 4.0",
+    "source": "GFZ Potsdam"
+  }
+}

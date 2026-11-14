@@ -1,0 +1,17 @@
+{
+  "observations": 352,
+  "expected_bins_within_observed_span": 352,
+  "missing_bins": 0,
+  "start_utc": "2026-10-01T00:00:00+00:00",
+  "end_exclusive_utc": "2026-11-14T00:00:00+00:00",
+  "minimum_kp": 0.0,
+  "maximum_kp": 7.333,
+  "status_counts": {
+    "def": 248,
+    "pre": 104
+  },
+  "storm_threshold_kp": 5,
+  "storm_bins": 9,
+  "contiguous_storm_intervals": 7,
+  "storm_bin_fraction": 0.02556818181818182
+}
