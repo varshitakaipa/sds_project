@@ -31,6 +31,9 @@ See src/analyze_kp.py and results/space_weather/ for clean CSV, daily summaries,
 2. Join orbital epochs to UTC weather intervals and inspect gaps, trends and manoeuvre confounding.
 3. Add density/solar inputs before estimating drag.
 4. Develop and temporally evaluate a baseline once history is available.
-5. Restore GitHub authentication and upload; last checked CLI token was invalid.
+5. Obtain reviewer access to the private project repository as required by the club.
 
 No degradation detector, failure prediction or warning-lead-time result is claimed.
+
+## Repository submission
+Created and uploaded to https://github.com/varshitakaipa/sds_project (private). Only this project repository was used.

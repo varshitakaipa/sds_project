@@ -1,5 +1,10 @@
 # Early Detection of Satellite Degradation in LEO
 
+Project repository: https://github.com/varshitakaipa/sds_project (private).
+Monthly progress: [Report_month.md](Report_month.md). Methods and work log: [documentations.md](documentations.md).
+
+![Initial GFZ Kp analysis](results/space_weather/kp_overview.png)
+
 First milestone for Varshita K (CS24BT007), Space and Data Science Club.
 Scope: reproducible public-data acquisition, quality checks and exploratory orbital features.
 This is an initial data pipeline, not a validated degradation detector.
