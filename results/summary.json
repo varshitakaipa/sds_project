@@ -1,0 +1,7 @@
+{
+  "observations": 0,
+  "satellites": 0,
+  "rejected": 0,
+  "groups": {},
+  "limitations": "Snapshot EDA only. Mean-element altitude proxies are not SGP4 positions or failure labels."
+}

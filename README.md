@@ -1,0 +1,27 @@
+# Early Detection of Satellite Degradation in LEO
+
+First milestone for Varshita K (CS24BT007), Space and Data Science Club.
+Scope: reproducible public-data acquisition, quality checks and exploratory orbital features.
+This is an initial data pipeline, not a validated degradation detector.
+
+## Run on Windows
+```powershell
+py -m venv .venv
+.\.venv\Scripts\python -m pip install -r requirements.txt
+.\.venv\Scripts\python src/pipeline.py --fetch
+.\.venv\Scripts\python -m unittest discover -s tests -v
+```
+Run without `--fetch` to analyse existing JSON downloads offline. Internet is required for acquisition.
+Keep each dated snapshot to begin accumulating history. Do not repeatedly query the provider.
+
+## Files
+- `Satellite_Degradation_Project_Proposal.pdf`: original proposal.
+- `documentations.md`: methods, provenance, limitations and next steps.
+- `Report_month.md`: actual completed work and pending tasks.
+- `src/pipeline.py`: downloader, validation, feature extraction and plot.
+- `data/raw/`: local original downloads, excluded from Git pending redistribution review.
+- `data/manifest.json`: local retrieval timestamps, URLs and SHA256 hashes.
+- `results/`: derived CSV, summary and figure.
+- `tests/`: analytical checks using explicitly synthetic test inputs.
+
+No private credentials are needed for the current-snapshot pipeline. Historical Space-Track access needs a user account; never commit passwords or tokens.

@@ -1,0 +1,7 @@
+__pycache__/
+.venv/
+.env
+*.pyc
+data/raw/
+data/manifest.json
+data/download_errors.json
