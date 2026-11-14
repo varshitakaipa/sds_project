@@ -1,5 +1,16 @@
 # documentations
 
+## Current update: historical-orbit processing
+
+All requested first-milestone downloads are now present. Run `python src/analyze_history.py` for the local-only GP history analysis. It validates UTC/SGP4 fields; filters the half-open October 1-November 14 window; resolves duplicate catalogue-ID/epoch pairs by latest CREATION_DATE; joins catalogues and weather; computes coverage and finite-difference altitude-proxy rates only for positive gaps <=48 hours. Missing weather values are not filled. The script records input hashes without inventing retrieval timestamps.
+
+Measured counts and interpretation are in results/orbital_local/summary.json and findings.md, and Report_month.md. GFZ text is parsed as the combined 28-column format; the supplied OMNI format file identifies the six columns (YEAR, DOY, HOUR, magnetic field, proton density, Dst). The extra NASA variables are not used. Dst 99999 is treated as missing. Temporal matching uses containing UTC bins and daily UTC dates. These retrospective joins are not leakage-safe predictive inputs without availability-aware lags.
+
+The convenience cohort contains 20 Starlink satellites from a single launch. Raw GCAT status is retained without interpreting it as operational health. Mean-element altitude conversions remain approximations; no failure detection, causal weather attribution or ballistic coefficient is claimed. All seven tests pass.
+
+Space-Track-derived results are excluded from Git under results/orbital_local/. The newly updated analysis report/documentation are local pending review of sharing permissions. This section supersedes earlier orbital-data-pending statements below, which describe the initial milestone.
+
+
 ## Updated milestone: Kp analysis completed
 
 The user manually acquired data/raw/kp_2026-11-14.json. Run `python src/analyze_kp.py` offline. It validates array lengths, finite Kp values, unique three-hour UTC bins and status codes before sorting and exporting records. There are 352 observations and no missing bins in the observed span: 1 October through 13 November 2026. 248 are definitive and 104 provisional; provisional values can change.

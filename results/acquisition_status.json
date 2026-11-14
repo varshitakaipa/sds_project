@@ -1,7 +1,7 @@
 {
   "date": "2026-11-14",
-  "real_observations": 352,
-  "status": "kp_manually_acquired_orbits_blocked",
+  "real_observations": 1982,
+  "status": "initial_orbit_and_weather_data_acquired",
   "failures": [
     {
       "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=starlink&FORMAT=JSON",
@@ -17,6 +17,8 @@
     }
   ],
   "alternative_attempt": "PowerShell Invoke-WebRequest failed host resolution",
-  "orbital_observations": 0,
-  "kp_observations": 352
+  "orbital_observations": 1630,
+  "kp_observations": 352,
+  "orbital_input_records": 1688,
+  "satellites": 20
 }

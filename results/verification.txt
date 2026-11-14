@@ -3,12 +3,14 @@ Executable: C:\Python314\python.exe
 
 test_circular_orbit_and_large_catalog_id (test_features.FeatureTests.test_circular_orbit_and_large_catalog_id) ... ok
 test_invalid_elements (test_features.FeatureTests.test_invalid_elements) ... ok
+test_rate_and_gap_exclusion (test_history.HistoryTests.test_rate_and_gap_exclusion) ... ok
+test_utc_bins (test_history.HistoryTests.test_utc_bins) ... ok
 test_bad_values_and_lengths (test_kp.KpTests.test_bad_values_and_lengths) ... ok
 test_duplicate_and_off_grid (test_kp.KpTests.test_duplicate_and_off_grid) ... ok
 test_gap_splits_events_and_end_is_exclusive (test_kp.KpTests.test_gap_splits_events_and_end_is_exclusive) ... ok
 
 ----------------------------------------------------------------------
-Ran 5 tests in 0.001s
+Ran 7 tests in 0.001s
 
 OK
 

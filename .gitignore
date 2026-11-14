@@ -5,3 +5,5 @@ __pycache__/
 data/raw/
 data/manifest.json
 data/download_errors.json
+results/orbital_local/
+work/
