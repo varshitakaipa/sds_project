@@ -5,15 +5,11 @@ Project: Early Detection of Satellite Degradation and Failure in LEO Megaconstel
 Actual work date: 14 November 2026. This submission records work completed for the monthly check; it does not claim a month of earlier work.
 
 ## Things tried and completed
-- Set up the project, preserved the proposal and created the dedicated GitHub repository.
-- Reviewed official orbital-data and space-weather sources; documented CelesTrak connection failures.
-- Acquired Space-Track GP history, both GCAT catalogues, GFZ Kp/ap/Ap/F10.7 and NASA OMNI Dst through manual downloads.
-- Implemented orbital-field validation and deterministic duplicate-epoch resolution using the latest creation timestamp.
-- Matched satellite identifiers to GCAT and produced per-satellite coverage and gap summaries.
-- Calculated approximate mean-element altitude/perigee/apogee and finite-difference altitude-proxy rates with a 48-hour gap limit.
-- Joined orbit epochs to three-hour UTC Kp/ap, daily solar indices and available hourly Dst; retained missing values and provisional flags.
-- Generated orbital-history and space-weather overview plots, clean feature CSV and provenance hashes.
-- Ran seven automated tests: all passed.
+- Collected historical Starlink orbital data, satellite catalogue records and space-weather data from Space-Track, GCAT, GFZ and NASA OMNI.
+- Built a preprocessing pipeline to check orbital records, resolve duplicate epochs and identify gaps in each satellite's history.
+- Calculated approximate orbital features, including altitude, perigee, apogee and altitude-change rates.
+- Aligned orbital observations with available geomagnetic and solar indices to prepare for investigating space-weather effects.
+- Produced initial orbital-history and space-weather plots, and documented the methods, findings and limitations in the project repository.
 
 ## Measured first-sample results (local)
 - Downloaded 1,688 orbital records for 20 Starlink satellites from one launch.
