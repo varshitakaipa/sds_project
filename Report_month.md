@@ -5,7 +5,7 @@ Project: Early Detection of Satellite Degradation and Failure in LEO Megaconstel
 Actual work date: 14 November 2026. This submission records work completed for the monthly check; it does not claim a month of earlier work.
 
 ## Things tried and completed
-- Set up the project, preserved the proposal and created the dedicated private GitHub repository.
+- Set up the project, preserved the proposal and created the dedicated GitHub repository.
 - Reviewed official orbital-data and space-weather sources; documented CelesTrak connection failures.
 - Acquired Space-Track GP history, both GCAT catalogues, GFZ Kp/ap/Ap/F10.7 and NASA OMNI Dst through manual downloads.
 - Implemented orbital-field validation and deterministic duplicate-epoch resolution using the latest creation timestamp.
@@ -34,4 +34,4 @@ Code: src/analyze_history.py. Local outputs: results/orbital_local/ (features, c
 
 Next: review source permissions; expand the cohort with an explicit selection method and independently corroborated status labels; inspect element-fit noise and manoeuvres; add SGP4 propagation and density modelling; evaluate any baseline with temporal splits and false-alarm/lead-time metrics.
 
-Space-Track-derived inputs, outputs and this updated analysis report have not been uploaded in this update while sharing permissions remain unresolved. Existing GitHub content reflects the earlier Kp milestone. No other repository was accessed or changed.
+The code, documentation and monthly progress summary are published in the dedicated project repository. Raw downloads and detailed Space-Track-derived files in results/orbital_local/ remain excluded from Git pending source-sharing review. No other repository was accessed or changed.

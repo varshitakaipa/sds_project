@@ -8,7 +8,7 @@ Measured counts and interpretation are in results/orbital_local/summary.json and
 
 The convenience cohort contains 20 Starlink satellites from a single launch. Raw GCAT status is retained without interpreting it as operational health. Mean-element altitude conversions remain approximations; no failure detection, causal weather attribution or ballistic coefficient is claimed. All seven tests pass.
 
-Space-Track-derived results are excluded from Git under results/orbital_local/. The newly updated analysis report/documentation are local pending review of sharing permissions. This section supersedes earlier orbital-data-pending statements below, which describe the initial milestone.
+Space-Track-derived results are excluded from Git under results/orbital_local/. Code, documentation and the monthly progress summary are published; raw downloads and detailed orbital outputs remain local pending review of source-sharing permissions. This section supersedes earlier orbital-data-pending statements below, which describe the initial milestone.
 
 
 ## Updated milestone: Kp analysis completed

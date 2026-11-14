@@ -1,6 +1,6 @@
 # Early Detection of Satellite Degradation in LEO
 
-Project repository: https://github.com/varshitakaipa/sds_project (private).
+Project repository: https://github.com/varshitakaipa/sds_project (public).
 Monthly progress: [Report_month.md](Report_month.md). Methods and work log: [documentations.md](documentations.md).
 
 ![Initial GFZ Kp analysis](results/space_weather/kp_overview.png)
@@ -37,4 +37,4 @@ Keep each dated snapshot to begin accumulating history. Do not repeatedly query 
 No private credentials are needed for the current-snapshot pipeline. Historical Space-Track access needs a user account; never commit passwords or tokens.
 
 ## Local historical-orbit analysis
-Run `python src/analyze_history.py`. Outputs are in `results/orbital_local/`, excluded from Git pending source-sharing review. See the local Report_month.md and documentations.md for this updated milestone. Raw downloads stay in data/raw. No additional network requests are needed.
+Run `python src/analyze_history.py`. Outputs are in `results/orbital_local/`, excluded from Git pending source-sharing review. See Report_month.md and documentations.md for this updated milestone. Raw downloads stay in data/raw. No additional network requests are needed.
