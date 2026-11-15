@@ -1,40 +1,61 @@
-# Early Detection of Satellite Degradation in LEO
+# Satellite Degradation Study
 
-Project repository: https://github.com/varshitakaipa/sds_project (public).
-Monthly progress: [Report_month.md](Report_month.md). Methods and work log: [documentations.md](documentations.md).
+Investigating whether public orbital histories can provide early warning of satellite degradation in LEO megaconstellations.
+
+**Author:** Varshita K (CS24BT007), Space and Data Science Club.
+
+**Status:** Initial data-processing and exploratory-analysis milestone. A degradation detector has not yet been validated.
+
+## Project documents
+- [Problem statement](problem_statement.md) (PS document): motivation, research question and scope.
+- [Pipeline](pipeline.md): inputs, scripts, processing steps and limitations.
+- [Monthly progress](Report_month.md): completed work and next steps.
+- [Detailed documentation](documentations.md): methods, provenance and work log.
+- [Original proposal](Satellite_Degradation_Project_Proposal.pdf).
+
+## Implemented so far
+- Orbital-data validation, duplicate resolution, approximate feature calculation and coverage summaries.
+- GFZ Kp analysis and alignment of historical orbital epochs with available space-weather observations.
+- Catalogue matching, exploratory plots and reproducibility records.
+- Seven automated tests covering core validation and calculations.
 
 ![Initial GFZ Kp analysis](results/space_weather/kp_overview.png)
 
-First milestone for Varshita K (CS24BT007), Space and Data Science Club.
-Scope: reproducible public-data acquisition, quality checks and exploratory orbital features.
-This is an initial data pipeline, not a validated degradation detector.
-
-## Completed offline Kp analysis
-
-Run `python -m pip install -r requirements.txt`, then `python src/analyze_kp.py` and `python -m unittest discover -s tests -v`.
-See `results/space_weather/findings.md` and `kp_overview.png`. This analyses environmental context only. Historical orbital data has now been acquired; see the local analysis below.
-
-## Run on Windows
+## Setup
+Use Python 3.10 or newer. From the project folder on Windows:
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\python -m pip install -r requirements.txt
-.\.venv\Scripts\python src/pipeline.py --fetch
 .\.venv\Scripts\python -m unittest discover -s tests -v
 ```
-Run without `--fetch` to analyse existing JSON downloads offline. Internet is required for acquisition.
-Keep each dated snapshot to begin accumulating history. Do not repeatedly query the provider.
 
-## Files
-- `Satellite_Degradation_Project_Proposal.pdf`: original proposal.
-- `documentations.md`: methods, provenance, limitations and next steps.
-- `Report_month.md`: actual completed work and pending tasks.
-- `src/pipeline.py`: downloader, validation, feature extraction and plot.
-- `data/raw/`: local original downloads, excluded from Git pending redistribution review.
-- `data/manifest.json`: local retrieval timestamps, URLs and SHA256 hashes.
-- `results/`: derived CSV, summary and figure.
-- `tests/`: analytical checks using explicitly synthetic test inputs.
+## Run the analyses
+Acquire the local inputs listed in [pipeline.md](pipeline.md), then run:
+```powershell
+.\.venv\Scripts\python src/analyze_kp.py
+.\.venv\Scripts\python src/analyze_history.py
+```
+A fresh clone contains code and selected outputs, but no raw datasets. Tests run without the datasets. The current scripts use fixed input filenames and an October-November 2026 analysis window, documented in pipeline.md.
 
-No private credentials are needed for the current-snapshot pipeline. Historical Space-Track access needs a user account; never commit passwords or tokens.
+Optional current-snapshot acquisition:
+```powershell
+.\.venv\Scripts\python src/pipeline.py --fetch
+```
+This requires internet access and may fail if providers are unavailable. It does not replace historical orbital data. Historical analysis runs offline after manual downloads; never commit account credentials.
 
-## Local historical-orbit analysis
-Run `python src/analyze_history.py`. Outputs are in `results/orbital_local/`, excluded from Git pending source-sharing review. See Report_month.md and documentations.md for this updated milestone. Raw downloads stay in data/raw. No additional network requests are needed.
+## Repository structure
+```text
+src/                    Acquisition and analysis scripts
+ tests/                 Automated checks using synthetic fixtures
+ data/raw/              Local original downloads (ignored by Git)
+ results/space_weather/ Published initial GFZ analysis
+ results/orbital_local/ Local detailed orbital analysis (ignored by Git)
+```
+
+## Limits and next steps
+The initial historical sample is a convenience cohort from one launch. Orbital features are approximate mean-element proxies, not precise propagated positions. No orbital change is labelled as a failure, and weather overlap does not establish causation. Next steps are independently corroborated labels, manoeuvre investigation, SGP4 propagation, density modelling and temporal evaluation.
+
+## Sources and data access
+See [pipeline.md](pipeline.md) for official source links and exact input requirements. Raw downloads and detailed Space-Track-derived outputs remain local pending source-sharing review. GFZ and GCAT attribution is recorded in the documentation and provenance files.
+
+Project repository: https://github.com/varshitakaipa/sds_project
