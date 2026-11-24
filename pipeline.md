@@ -60,3 +60,17 @@ The weather joins describe retrospective context. Predictive features will need 
 - [CelesTrak GP formats](https://celestrak.org/NORAD/documentation/gp-data-formats.php)
 
 Raw downloads and detailed Space-Track-derived outputs remain local and excluded from Git pending source-sharing review. Public repository contents include software, documentation, progress summaries and the initial GFZ weather analysis. Preserve source attribution and review provider terms before redistributing additional data or results.
+
+## Milestone 2: daily robust screening
+1. Read the cleaned `results/orbital_local/orbit_weather_features.csv` from the historical pipeline.
+2. Aggregate satellite/UTC-day observations by median altitude proxy. Calculate changes only between adjacent observed dates; missing days are not bridged. Daily medians can mix different observation times and are not daily propagated positions.
+3. Subtract the same-day leave-one-out median peer change when at least five peers exist. Peer objects belong to the same convenience cohort; they are not verified healthy.
+4. Use dates strictly before the split (default `2026-10-22`) to fit each satellite's own change and peer residual reference. Require ten calibration points per feature. Freeze these references for later dates.
+5. Compute score `(value - median) / max(MAD / 0.6745, 0.02 km/day)`. Flag a candidate only when both absolute scores exceed 3.5 and absolute peer residual is at least 0.1 km/day. These floor/gate values are unvalidated engineering choices.
+6. Export scores, missing/ineligible days, candidate days, calibration settings, input hash and a threshold-sensitivity grid. Compare 3.5, 5 and 7 score thresholds and 0.05, 0.1 and 0.2 km/day change gates without choosing settings using health outcomes.
+
+Run `python src/baseline.py --help` for input/output, split and scale-floor arguments. Run `python src/demo_baseline.py` for stable/shared-step/isolated-excursion/isolated-drift synthetic checks. These use no real orbital data and assert predetermined behaviour; they are not failure-prediction metrics.
+
+Daily summaries and same-day peer information are retrospective. No element publication-time simulation is performed, so this is not an operational or availability-aware forecasting test. Counts measure review burden, not false alarms. Weather is retained as context, not corrected for. Real outputs remain ignored under results/orbital_local/.
+
+Reference for median/MAD outlier scoring: [NIST](https://itl.nist.gov/div898/handbook/eda/section3/eda35h.htm). Its general 3.5 threshold is not a validated orbital-health boundary.

@@ -9,7 +9,7 @@ Investigating whether public orbital histories can provide early warning of sate
 ## Project documents
 - [Problem statement](problem_statement.md) (PS document): motivation, research question and scope.
 - [Pipeline](pipeline.md): inputs, scripts, processing steps and limitations.
-- [Monthly progress](Report_month.md): completed work and next steps.
+- [Initial progress](Report_month.md) and [Milestone 2](Report_month_2.md): completed work and next steps.
 - [Detailed documentation](documentations.md): methods, provenance and work log.
 - [Original proposal](Satellite_Degradation_Project_Proposal.pdf).
 
@@ -17,7 +17,7 @@ Investigating whether public orbital histories can provide early warning of sate
 - Orbital-data validation, duplicate resolution, approximate feature calculation and coverage summaries.
 - GFZ Kp analysis and alignment of historical orbital epochs with available space-weather observations.
 - Catalogue matching, exploratory plots and reproducibility records.
-- Seven automated tests covering core validation and calculations.
+- Twelve automated tests covering core validation and calculations.
 
 ![Initial GFZ Kp analysis](results/space_weather/kp_overview.png)
 
@@ -59,3 +59,17 @@ The initial historical sample is a convenience cohort from one launch. Orbital f
 See [pipeline.md](pipeline.md) for official source links and exact input requirements. Raw downloads and detailed Space-Track-derived outputs remain local pending source-sharing review. GFZ and GCAT attribution is recorded in the documentation and provenance files.
 
 Project repository: https://github.com/varshitakaipa/sds_project
+
+## Milestone 2: retrospective screening baseline
+The new baseline compares daily orbital changes with earlier self-history and same-day peers. Earlier dates calibrate robust median/MAD references; later dates are screened with frozen parameters. Outputs are candidate review signals, not satellite-health classifications.
+
+No real data is needed to run the synthetic checks:
+```powershell
+.\.venv\Scripts\python src/demo_baseline.py
+.\.venv\Scripts\python -m unittest discover -s tests -v
+```
+For the local real-data experiment, first run the history pipeline, then:
+```powershell
+.\.venv\Scripts\python src/baseline.py
+```
+Real-data outputs remain in `results/orbital_local/milestone2/`. Clearly labelled artificial outputs are in `results/synthetic_baseline/`. See [Report_month_2.md](Report_month_2.md) for findings and limitations. Five new tests check constant references, gap exclusion, peer behaviour, future-data separation and invalid calibration input.

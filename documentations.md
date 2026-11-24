@@ -1,5 +1,9 @@
 # documentations
 
+## Current checkpoint: 24 November 2026
+
+Implemented the retrospective daily self/peer screening baseline and synthetic stress checks. See [pipeline.md](pipeline.md) for the precise algorithm and [Report_month_2.md](Report_month_2.md) for measured counts, validation and limitations. All twelve project tests pass. This supplements the initial exploratory analysis; older statements below describe earlier checkpoints. No validated health classifier or failure prediction is claimed.
+
 ## Current update: historical-orbit processing
 
 All requested first-milestone downloads are now present. Run `python src/analyze_history.py` for the local-only GP history analysis. It validates UTC/SGP4 fields; filters the half-open October 1-November 14 window; resolves duplicate catalogue-ID/epoch pairs by latest CREATION_DATE; joins catalogues and weather; computes coverage and finite-difference altitude-proxy rates only for positive gaps <=48 hours. Missing weather values are not filled. The script records input hashes without inventing retrieval timestamps.

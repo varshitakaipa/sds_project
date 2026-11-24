@@ -4,6 +4,10 @@ Student: Varshita K (CS24BT007)
 Project: Early Detection of Satellite Degradation and Failure in LEO Megaconstellations
 Actual work date: 14 November 2026. This submission records work completed for the monthly check; it does not claim a month of earlier work.
 
+## Follow-up checkpoint - 24 November 2026
+
+Completed a retrospective daily-change screening baseline, earlier/later split, peer comparison and synthetic checks. See [Report_month_2.md](Report_month_2.md) for the second progress checkpoint. The initial report below retains its original scope and date.
+
 ## Things tried and completed
 - Collected historical Starlink orbital data, satellite catalogue records and space-weather data from Space-Track, GCAT, GFZ and NASA OMNI.
 - Built a preprocessing pipeline to check orbital records, resolve duplicate epochs and identify gaps in each satellite's history.

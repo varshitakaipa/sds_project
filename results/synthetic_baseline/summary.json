@@ -1,0 +1,35 @@
+{
+  "synthetic_only": true,
+  "checks_passed": true,
+  "caveat": "Artificial scenarios test software behaviour, not real failure-detection accuracy.",
+  "results": [
+    {
+      "scenario": "stable",
+      "synthetic": true,
+      "eligible_days": 161,
+      "candidate_days": 0,
+      "candidate_satellites": 0
+    },
+    {
+      "scenario": "shared_step",
+      "synthetic": true,
+      "eligible_days": 161,
+      "candidate_days": 0,
+      "candidate_satellites": 0
+    },
+    {
+      "scenario": "isolated_excursion",
+      "synthetic": true,
+      "eligible_days": 161,
+      "candidate_days": 2,
+      "candidate_satellites": 1
+    },
+    {
+      "scenario": "isolated_drift",
+      "synthetic": true,
+      "eligible_days": 161,
+      "candidate_days": 19,
+      "candidate_satellites": 1
+    }
+  ]
+}
